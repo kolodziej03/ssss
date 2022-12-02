@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylsheet" href="main.css">
+    <script src="main.js" defer></script>
+    <title>Drużyny</title>
+</head>
+<body>
+    <fieldset id="formularz"> 
+        <legend>Football</legend>
+        <form id="football">
+            <fieldset>
+                <legend>Wybór drużyn</legend>
+                
+                <label for="gosp">Gospodarze: </label>
+                <select name="gosp" id="gosp" class="opcja">
+                    <option value="Meksyk">Meksyk</option>
+                    <option value="Argentyna">Argentyna</option>
+                    <option value="Polska">Polska</option>
+                    <option value="Anglia">Anglia</option>
+                    <option value="Królestwo Kabuto">Królestwo Kabuto</option>
+                    <option value="Bydgoszcz">Bydgoszcz</option>
+                </select>
+                
+                <label for="gosc">Goście: </label>
+                <select name="gosc" id="gosc" class="opcja">
+                    <option value="Meksyk">Meksyk</option>
+                    <option value="Argentyna">Argentyna</option>
+                    <option value="Polska">Polska</option>
+                    <option value="Anglia">Anglia</option>
+                    <option value="Królestwo Kabuto">Królestwo Kabuto</option>
+                    <option value="Bydgoszcz">Bydgoszcz</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Wynik</legend>
+                
+                <label for="wynikgosp">Wynik gospodarzy: </label>
+                <input type="number" name="wynikgosp" id="wynikgosp">
+                
+                <label for="wynikgosc">Wynik gości: </label>
+                <input type="number" name="wynikgosc" id="wynikgosc">
+            </fieldset>
+            <input type="submit" value="Wyślij" id="submit" name="submit" onclick="onSend()">
+
+            
+    </fieldset>
+</body>
+</html>
+function onSend()
+{
+    let formularz = document.forms.football;
+    let form_field = document.getElementById("formularz");
+
+    form_field.innerHTML += "Twój typ wyniku meczu "+formularz.elements.gosp.value+" - "+formularz.elements.gosc.value+" to "+formularz.elements.wynikgosp.value+" : "+formularz.elements.wynikgosc.value+"</p>";
+}
+
+
+
+
